@@ -1,0 +1,45 @@
+<div class="col-md-8 col-md-offset-2">
+  <div class="box" id="checkout">
+    <h1>Оформление заказа</h1>
+    <%= form_for(@order, :html => { :role => 'form'}) do |f| %>
+        <% if @order.errors.any? %>
+          <div id="error">
+            <% @order.errors.full_messages.each do |msg| %>
+                <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong><%= msg %></strong>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label :name, "ФИО" %><br>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :email, "Email (необязательно)" %><br>
+          <%= f.text_field :email, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :phone, "Номер телефона" %><br>
+          <%= f.text_field :phone, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :adress, "Адрес доставки" %><br>
+          <%= f.text_area :adress, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label :comment, "Коментарии к заказу (пожелания по доставке, цвету и тп.)" %><br>
+          <%= f.text_area :comment, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.submit 'Оформить заказ', :class => 'btn btn-primary pull-right'%>
+          <%= link_to root_path, class: "btn btn-default pull-left" do %>
+              <i class="fa fa-chevron-left"></i> Продолжить покупки
+          <% end %>
+        </div>
+      <% end %>
+  </div>
+</div>
+

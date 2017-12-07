@@ -1,0 +1,120 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require font-awesome
+ *= require social-likes_flat
+ *= require owl.carousel
+ *= require owl.theme
+ *= require owl.transitions
+ *= require_self
+ */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "style.blue";
+@import "prettyPhoto";
+
+@media (min-width: 991px) {
+  html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 210px;
+  }
+  #copyright {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  #footer {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+  }
+}
+.cart_item_form{
+  margin-top: 20px;
+  label {
+    font-size: 16px;
+    font-weight: 400;
+  }
+  input#shopping_cart_item_quantity {
+      width: 170px;
+  }
+}
+
+.ribbon.new.presents {
+  top: -20px;
+  .theribbon {
+    width: 200px;
+  }
+}
+
+.box.product_tab {
+  overflow: hidden;
+  .tab-pane{
+    padding: 15px;
+  }
+}
+#copyright {
+  padding: 10px 0!important;
+}
+#checkout {
+  overflow: hidden;
+}
+
+#comments {
+    margin-top: 55px;
+}
+
+.box.orders {
+  overflow: hidden;
+}
+
+.box.account {
+  overflow: hidden;
+}
+
+ul.category-menu > li > ul > li.active > a {
+  color: #16A085 !important;
+}
+.ribbon.gift .theribbon{
+  width: 183px!important;
+}
+
+.comment-replies {
+  margin-left: 35px;
+}
+.sale {
+  padding-right: 5px;
+  color: #f00;
+  text-decoration: line-through;
+}
+
+.new_comment {
+  display: none;
+}
+.embed-responsive-4by4 {
+}
+.margin-bottom-10 {
+  margin-bottom: 10px;
+}
+.red {
+  color: red;
+}
+.attachment p {
+  display: inline-block;
+  padding-right: 10px;
+}

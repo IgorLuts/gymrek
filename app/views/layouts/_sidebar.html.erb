@@ -1,0 +1,11 @@
+<div class="panel panel-default sidebar-menu fclass">
+    <div class="panel-heading">
+        <h3 class="panel-title">Категории</h3>
+    </div>
+    <div class="panel-body">
+      <%= arranged_tree_as_list(@categories, {:sort_by => [:position],
+          :ul_class_top => ["nav", "nav-pills", "nav-stacked", "category-menu", "menu_active"]}) do |category| %>
+        <%= link_to category.name, category_path(category), class: category.custom_style %>
+      <% end %>
+    </div>
+</div>

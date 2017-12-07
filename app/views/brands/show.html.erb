@@ -1,0 +1,29 @@
+<% content_for :breadcrumbs do %>
+  <div id="heading-breadcrumbs" class="col-md-12">
+    <div class="container">
+      <div class="row">
+        <ul class="breadcrumb">
+          <li><%= link_to "Главная", root_path %></li>
+           <li><%= link_to @brand.name, @brand %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="col-md-3">
+  <%= yield(:user_menu) %>
+  <%= render 'layouts/sidebar' %>
+</div>
+<div class="col-md-9">
+  <div class="box">
+      <h1><%= @brand.name %></h1>
+  </div>
+
+  <div class="row products">
+     <%= render "products/product", products: @products %>
+  </div>
+</div>
+<div class="row">
+  <%= paginate @products %>
+</div>

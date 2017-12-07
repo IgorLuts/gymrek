@@ -1,0 +1,24 @@
+<% products.each do |product| %>
+  <% cache product do %>
+  <div class="col-md-4 col-sm-6">
+      <div class="product">
+          <%= link_to product_path(product) do %>
+              <%= image_tag product.image_url(:preview), alt: product.title, class:"img-responsive" %>
+          <% end %>
+          <div class="text">
+              <h3>
+                  <%= link_to product.title, product_path(product) %>
+              </h3>
+                  <p class="price"><%= product.price %> EUR</p>
+              <p>
+                  <%= link_to "Подробно", product_path(product), class:"btn btn-default" %>
+                  <%= link_to shopping_cart_items_path(:product_id => product), :method => 'POST', class:"btn btn-primary" do %>
+                    <i class="fa fa-shopping-cart"></i>Купить
+                  <% end %>
+              </p>
+          </div>
+          <%= product_feature(product.feature) %>
+      </div>
+  </div>
+  <% end %>
+<% end %>

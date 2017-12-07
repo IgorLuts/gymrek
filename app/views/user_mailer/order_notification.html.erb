@@ -1,0 +1,16 @@
+<h1>Order received</h1>
+<h3>From: http://JaJa.com.ua</h3>
+<p>Customer name: <%=@order.name  %></p>
+<p>Customer email: <%=@order.email  %></p>
+<p>Customer phone number: <%=@order.phone  %></p>
+<p>Delivery adress: <%=@order.adress  %></p>
+<p>Orders comment: <%=@order.comment %></p>
+<p>Order details: </p>
+<% @order.shopping_cart_items.each do |item| %>
+  <p>Item name: <%= item.item.title %></p>
+  <p>Item quantity: <%= item.quantity  %></p>
+  <p>Item price: <%= number_to_currency item.item.price %></p>
+  <hr>
+<% end %>
+
+<p>Order total: <%= number_to_currency @order.total_price  %></p>

@@ -1,0 +1,126 @@
+<% content_for :title do %><%= @product.meta_title %><% end %>
+<% content_for :description do %><%= @product.meta_description %><% end %>
+<% content_for :keywords do %><%= @product.meta_keywords %><% end %>
+
+<%= render 'layouts/breadcrumbs' %>
+
+<div class="col-md-3">
+  <%= yield(:user_menu) %>
+  <%= render 'layouts/sidebar' %>
+</div>
+
+<div class="col-md-9">
+  <div itemscope itemtype="http://schema.org/Product">
+    <div class="row" id="productMain">
+      <div class="row">
+        <div class="col-sm-6">
+          <div id="mainImage">
+              <%=link_to @product.image_url, rel: "prettyPhoto[gallery1]" do %>
+                  <%= image_tag @product.image_url(:preview), alt: @product.title, class: "img-responsive", itemprop: "image" %>
+              <% end %>
+          </div>
+          <%= product_feature(@product.feature) %>
+        </div>
+        <div class="col-sm-6">
+            <div class="box">
+              <h1 class="text-center" itemprop="name"><%= @product.title %></h1>
+              <p class="goToDescription"><%= @product.sales_info %></p>
+
+              <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                <% if @product.old_price %>
+                  <p class="price">
+                    <span class="sale">
+                      <%= number_to_currency @product.old_price %>
+                    </span>
+                    <span>
+                      <%= number_to_currency @product.price %>
+                    </span>
+                  </p>
+                <% else %>
+                  <p class="price"><%= number_to_currency @product.price %></p>
+                <% end %>
+                    <meta itemprop="price" content="<%= @product.price %>">
+                    <meta itemprop="priceCurrency" content="UAH">
+              </div>
+                <hr>
+                  <%= form_for ShoppingCartItem.new, :url => shopping_cart_items_path(:product_id => @product), :html => { :class => 'form-inline cart_item_form'} do |f| %>
+                    <div class="form-group">
+                      <%= f.label :quantity, "Количество: "%>
+                      <%= f.number_field :quantity, value: 1, class: 'form-control' %>
+                    </div>
+                    <%= f.submit "Купить", class:"btn btn-primary" %>
+                  <% end %>
+            </div>
+            <div class="ribbon new presents">
+                <% if @product.available %>
+                  <div class="theribbon">Есть в наличии</div>
+                <% else %>
+                  <div class="theribbon">Под заказ</div>
+                <% end %>
+                <div class="ribbon-background"></div>
+            </div>
+        </div>
+        <!-- <div class="col-xs-6 embed-responsive embed-responsive-4by4">
+          <iframe class="embed-responsive-item" src="<%= @product.video_url %>"></iframe>
+        </div> -->
+
+<!-- <div class="col-md-6"> -->
+        <div class="col-sm-6">
+          <% @product.galleries.each_with_index do |gallery, index| %>
+            <div class="col-xs-4 margin-bottom-10">
+              <%=link_to gallery.image_url, rel: "prettyPhoto[gallery1]", class: "thumb"  do %>
+                <%= image_tag gallery.image_url(:thumb), alt: "#{@product.title} preview#{index}", class: "img-responsive" %>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+
+
+      </div>
+      <div class="row">
+      </div>
+    </div>
+    <div class="box product_tab" id="details">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Описание</a></li>
+          <% if @product.characteristics && @product.characteristics != "" %>
+            <li role="presentation"><a href="#characteristics" aria-controls="characteristics" role="tab" data-toggle="tab">Характеристики</a></li>
+          <% end %>
+          <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">Отзывы (<%= @comments_count %>)</a></li>
+          <li role="presentation"><a href="#recent" aria-controls="recent" role="tab" data-toggle="tab">Похожие товары</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="description" itemprop="description">
+            <%= sanitize @product.description %>
+            <!-- <div class="attachment">
+                <p>Скачать информацию о бренде</p>
+                <a type="button" class="btn btn-danger" target='_blank' href=<%= @product.attachments.first.try(:file_url) %>>
+                  <i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+                  Скачать
+                </a>
+            </div> -->
+            <hr>
+            <div class="social-likes" data-title="<%= @product.title %>" data-counters="no">
+              <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+              <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
+              <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
+              <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
+              <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="characteristics">
+            <!-- изменить чтобы были видны таблицы. -->
+            <%= raw @product.characteristics %>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="review">
+            <%= render 'comments/comment' %>
+          </div>
+          <div role="tabpanel" class="tab-pane clearfix" id="recent">
+            <%= render "products/product", products: @similar %>
+          </div>
+        </div>
+  </div>
+</div>

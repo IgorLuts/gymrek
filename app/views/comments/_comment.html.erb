@@ -1,0 +1,48 @@
+  <div class="btn btn-primary pull-left" id='show_comment_form'>
+    Написать отзыв
+  </div>
+  <div class="clearfix"></div>
+  <%= form_for([@product, Comment.new], :html => { :role => 'form'}, remote: true) do |f| %>
+      <% if Comment.new.errors.any? %>
+        <div id="error">
+          <% Comment.new.errors.full_messages.each do |msg| %>
+            <div class="alert alert-info alert-dismissible" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong><%= msg %></strong>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+        <%= f.label "Ваше имя" %><br>
+        <%= f.text_field :user_name, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label "Ваш отзыв" %><br>
+        <%= f.text_area :body, class: 'form-control' %>
+      </div>
+        <button class="btn btn-primary pull-right">
+            <i class="fa fa-comment-o"></i> Оставить отзыв
+        </button>
+   <% end %>
+  <div id="comments">
+      <div id="blog-post">
+          <% @comments.each do |comment| %>
+              <div class="comment" id="blog-post">
+                  <h5><%= comment.user_name %></h5>
+                  <p class="posted"><i class="fa fa-clock-o"></i> <%= time_tag comment.created_at.to_date %></p>
+                  <p><%= raw comment.body %></p>
+
+                <% comment.comment_replies.each do |reply| %>
+                  <div class="comment-replies">                 
+                    <h5><%= reply.user_name %></h5>
+                    <p class="posted"><i class="fa fa-clock-o"></i> <%= time_tag reply.created_at.to_date %></p>
+                    <p><%= raw reply.body %></p>
+                  </div> 
+                <% end %> 
+              </div>
+
+          <% end %>  
+      </div>
+  </div>

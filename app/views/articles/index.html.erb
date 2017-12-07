@@ -1,0 +1,41 @@
+<% content_for :breadcrumbs do %>
+  <div id="heading-breadcrumbs" class="col-md-12">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1>Блог</h1>
+          </div>
+          <div class="col-md-5">
+            <ul class="breadcrumb">
+              <li><%= link_to "Главная", root_path %></li>
+               <li>Новости и статьи</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="content">
+  <div class="container">
+    <% @articles.each do |article| %>
+      <section>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="heading">
+              <h2><%= link_to article.title, article_path(article) %></h2>
+            </div>
+            <p class="lead">
+              <%= sanitize article.description %>
+            </p>
+            <p class="read-more">
+                <%= link_to "Подробнее", article_path(article), class: "btn btn-primary" %>
+            </p>
+          </div>
+        </div>
+      </section>
+    <% end %>
+  </div>
+</div>
+
+<%= paginate @articles %>

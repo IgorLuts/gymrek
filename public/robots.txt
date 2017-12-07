@@ -1,0 +1,12 @@
+# See http://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+#
+# To ban all spiders from the entire site uncomment the next two lines:
+User-agent: *
+Disallow: /admin/*
+Disallow: /?page=
+Disallow: /users/sign_in
+Disallow: /shopping_cart
+Disallow: /orders/new
+
+Host: xn--80aal0a7a.xn--j1amh
+Sitemap: http://xn--80aal0a7a.xn--j1amh/sitemap.xml.gz

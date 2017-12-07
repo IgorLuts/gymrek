@@ -1,0 +1,56 @@
+<% content_for :breadcrumbs do %>
+  <div id="heading-breadcrumbs" class="col-md-12">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-7">
+            <h1></h1>
+          </div>
+          <div class="col-md-5">
+            <ul class="breadcrumb">
+              <li><%= link_to "Главная", root_path %></li>
+               <li>Контакты</li>
+            </ul>
+          </div>
+        </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="col-md-8 col-md-offset-2">
+ <div class="box" id="contact">
+    <h2>Номера телефонов</h2>
+    <p>Вы сможете проконсультироваться с менеджерами или заказать товар по номеру:</p>
+    <ul>
+      <li>+3 8(098) 684 71 46</li>
+    </ul>
+    <h2>Написать нам</h2>
+      <%= form_for(@contact, :html => { :role => 'form'}) do |f| %>
+        <% if @contact.errors.any? %>
+          <div id="error">
+            <% @contact.errors.full_messages.each do |msg| %>
+                <div class="alert alert-info alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong><%= msg %></strong>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+
+        <div class="form-group">
+          <%= f.label "Имя:" %><br>
+          <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label "Email:" %><br>
+          <%= f.text_field :email, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= f.label "Ваш вопрос:" %><br>
+          <%= f.text_area :content, class: 'form-control' %>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-envelope-o"></i> Отправить сообщение
+        </button>
+      <% end %>
+  </div>
+</div>

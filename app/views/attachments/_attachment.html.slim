@@ -1,0 +1,9 @@
+.col-md-4.col-sm-6
+  .product
+    = image_tag attachment.product.image_url(:preview), alt: attachment.product.title, class:"img-responsive"
+    .text
+      h3
+        = attachment.product.title
+      a.btn.btn-danger href="#{attachment.file_url}" target="_blank" type="button" 
+        i.fa.fa-file-pdf-o aria-hidden="true" 
+        | Скачать

@@ -1,0 +1,37 @@
+<% content_for :title do %><%= @category.meta_title %><% end %>
+<% content_for :description do %><%= @category.meta_description %><% end %>
+<% content_for :keywords do %><%= @category.meta_keywords %><% end %>
+
+<% content_for :breadcrumbs do %>
+  <div id="heading-breadcrumbs" class="col-md-12">
+    <div class="container">
+      <div class="row">
+        <ul class="breadcrumb">
+          <li><%= link_to "Главная", root_path %></li>
+          <% @category.ancestors.each do |a| %>
+            <li><%= link_to a.name, a %></li>
+          <% end %>
+           <li><%= link_to @category.name, @category %></li>
+        </ul>      
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<div class="col-md-3">
+  <%= yield(:user_menu) %>
+  <%= render 'layouts/sidebar' %>
+</div>
+<div class="col-md-9">
+  <div class="box">
+      <h1><%= @category.name %></h1>
+      <p><%= sanitize @category.description %></p>
+  </div>
+    
+  <div class="row products">
+     <%= render "products/product", products: @products %>
+  </div>    
+</div>
+<div class="row">
+  <%= paginate @products %>
+</div>

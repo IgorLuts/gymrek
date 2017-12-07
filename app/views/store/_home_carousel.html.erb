@@ -1,0 +1,41 @@
+<section>
+    <!-- *** HOMEPAGE CAROUSEL ***
+_________________________________________________________ -->
+
+  <div class="home-carousel">
+
+    <div class="dark-mask"></div>
+
+    <div class="container">
+      <div class="homepage owl-carousel">
+      <% products.each do |product| %>
+        <div class="item">
+          <div class="row">
+              <div class="col-sm-4">
+                <%= image_tag product.image_url(:preview), alt: product.title, class:"img-responsive" %>
+              </div>
+              <div class="col-sm-8">
+                <div class="text">
+                  <h3>
+                    <%= product.title %>
+                  </h3>
+                  <p class="price"><%= number_to_currency product.price %></p>
+                  <p><%= truncate(product.description, length: 200, separator: ' ', :escape => false) %></p>
+                  <p class="buttons">
+                    <%= link_to "Подробно", product_path(product), class:"btn btn-default" %>
+                    <%= link_to shopping_cart_items_path(:product_id => product), :method => 'POST', class:"btn btn-primary" do %>
+                      <i class="fa fa-shopping-cart"></i>Купить
+                    <% end %>
+                  </p>
+                </div>
+              </div>
+          </div>
+        </div>
+      <% end %>
+      </div>
+
+    </div>
+  </div>
+
+    <!-- *** HOMEPAGE CAROUSEL END *** -->
+</section>

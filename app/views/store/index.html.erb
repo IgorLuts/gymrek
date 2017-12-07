@@ -1,0 +1,21 @@
+<div class="col-md-3">
+  <%= yield(:user_menu) %>
+  <%= render 'layouts/sidebar' %>
+</div>
+<div class="col-md-9">
+  <div class="box">
+      <h1>Популярные товары</h1>
+  </div>
+
+  <div class="row products">
+      <%= render "products/product", products: @popular_products %>
+  </div>
+  <% if @novinki.any? %>
+    <div class="box">
+        <h2>Новинки</h2>
+    </div>
+    <div class="row products">
+        <%= render "products/product", products: @novinki %>
+    </div>
+  <% end %>
+</div>

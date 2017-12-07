@@ -1,0 +1,37 @@
+<% content_for :title do %><%= @article.meta_title %><% end %>
+<% content_for :description do %><%= @article.meta_description %><% end %>
+<% content_for :keywords do %><%= @article.meta_keywords %><% end %>
+
+<% content_for :breadcrumbs do %>
+  <div id="heading-breadcrumbs" class="col-md-12">
+    <div class="container">
+        <div class="row">
+          <ul class="breadcrumb">
+            <li><%= link_to "Главная", root_path %></li>
+            <li><%= link_to 'Новости и статьи', articles_path %></li>
+            <li><%= @article.title %></li>
+          </ul>          
+        </div>
+    </div>
+  </div>
+<% end %>
+
+<div id="blog-post">
+  <div class="box">
+    <div class="heading">
+      <h1><%= @article.title %></h1> 
+    </div>
+    
+    <div id="post-content">
+      <%= sanitize @article.content %>
+      <hr>
+          <div class="social-likes" data-title="<%= @article.title %>" data-counters="no">
+            <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
+            <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
+            <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
+            <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
+            <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
+          </div>
+    </div>
+  </div>
+</div>

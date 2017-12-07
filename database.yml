@@ -1,0 +1,12 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  host: postgresql7.locum.ru
+  username: lexx777_jaja45
+  password: hkPtb7yC
+
+production:
+  <<: *default
+  database: lexx777_jaja45

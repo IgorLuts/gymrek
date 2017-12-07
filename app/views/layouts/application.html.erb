@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Gymrek.com" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Gymrek.com" %>">
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <%= csrf_meta_tags %>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700italic,700,500italic,500,400italic,300,300italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript">
+    !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on"];analytics.factory=function(t){return function(){var e=Array.prototype.slice.call(arguments);e.unshift(t);analytics.push(e);return analytics}};for(var t=0;t<analytics.methods.length;t++){var e=analytics.methods[t];analytics[e]=analytics.factory(e)}analytics.load=function(t){var e=document.createElement("script");e.type="text/javascript";e.async=!0;e.src=("https:"===document.location.protocol?"https://":"http://")+"cdn.segment.com/analytics.js/v1/"+t+"/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(e,n)};analytics.SNIPPET_VERSION="4.0.0";
+    analytics.load("a1UzfAnnflF0KkkYgvLL3GrPeKuqqPzN");
+    analytics.page();
+    }}();
+    </script>
+    <style>
+.btn-primary {
+    color: white;
+    background-color: #337ab7;
+    border-color: #337ab7;
+  }
+  #top .login a.btn.btn-primary {
+    color: white;
+}
+.btn-primary:hover {
+    border-color: white !important;
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #337ab7 !important;
+}
+#top .login a.btn.btn-primary:hover {
+    color: #fff;
+    border-color: white !important;
+}
+a {
+    color: #337ab7;
+    text-decoration: none;
+}
+a:hover, a:focus {
+    color: #337ab7;
+}
+.panel.sidebar-menu .panel-heading h1, .panel.sidebar-menu .panel-heading h2, .panel.sidebar-menu .panel-heading h3, .panel.sidebar-menu .panel-heading h4, .panel.sidebar-menu .panel-heading h5 {
+    display: inline-block;
+    border-bottom: solid 5px #337ab7;
+  }
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #ffffff;
+    background-color: gray;
+}
+#footer ul a:hover {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+
+.nav-pills>li.active>a, .nav-pills>li.active>a:hover, .nav-pills>li.active>a:focus {
+    color: #ffffff;
+    background-color: #337ab7;
+}
+
+.navbar ul.nav>li.active>a, .navbar ul.nav>li.open>a {
+    text-decoration: none !important;
+    border-top: solid 5px #294d76;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:hover, .navbar-default .navbar-nav>.active>a:focus {
+    color: white;
+    background-color: #467fbf;
+}
+
+button.btn.btn-no-margin {
+    color: white;
+    background-color: #337ab7;
+    border: solid;
+    border-width: 0.5px;
+    height: 34px;
+    border-color: #ccc;
+}
+
+button.btn.btn-no-margin:hover {
+    color: white;
+    background-color: #337ab7;
+}
+
+.nav-tabs {
+    border-bottom: 1px solid #337ab7;
+}
+
+.navbar ul.nav>li>a:hover {
+    border-top: solid 5px #467fbf;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #555555;
+    background-color: #92b3d9;
+}
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    color: #555555;
+    background-color: #ffffff;
+    border: 1px solid #337ab7;
+    border-bottom-color: transparent;
+    cursor: default;
+}
+.pagination>.active>a, .pagination>.active>span, .pagination>.active>a:hover, .pagination>.active>span:hover, .pagination>.active>a:focus, .pagination>.active>span:focus {
+    z-index: 2;
+    color: #ffffff;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+.pagination>li>a, .pagination>li>span {
+    padding: 6px 12px;
+    line-height: 1.42857143;
+    text-decoration: none;
+    color: #337ab7;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+}
+.heading h1, .heading h2, .heading h3, .heading h4, .heading h5 {
+    border-bottom: solid 5px #337ab7;
+}
+.alert-success {
+    background-color: #337ab7;
+    border-color: #337ab7;
+    color: white;
+    margin-top: 2px;
+}
+.btn-primary:focus, .btn-primary.focus {
+    color: white;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+
+.product .text h3 {
+    font-size: 14px;
+    font-weight: 700;
+    height: 40.6px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+</style>
+  </head>
+
+  <body>
+      <%= render 'layouts/top' %>
+      <%= render 'layouts/navbar' %>
+      <div id="all">
+        <div id="content">
+            <%= yield(:breadcrumbs) %>
+            <div class="container">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
+        </div>
+        <%= render 'layouts/footer' %>
+        <%= render 'layouts/copyright' %>
+      </div>
+    <%= javascript_include_tag 'application' %>
+  </body>
+</html>
