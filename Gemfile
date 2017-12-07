@@ -17,7 +17,7 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'cloudinary'
 gem 'mini_magick'
 gem 'ancestry', '~> 2.1.0'
-gem 'active_admin-sortable_tree', '0.3.0'
+gem 'active_admin-sortable_tree', '1.0.0'
 gem 'active_skin'
 gem 'ckeditor'
 gem 'unicorn', group: :production

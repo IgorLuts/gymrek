@@ -29,9 +29,9 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
-    active_admin-sortable_tree (0.3.0)
+    active_admin-sortable_tree (1.0.0)
       activeadmin (>= 0.6)
-      jquery-ui-rails (~> 5.0)
+      jquery-ui-rails (>= 5.0)
       rails (>= 3.2)
     active_skin (0.0.12)
     activeadmin (1.0.0.pre4)
@@ -394,7 +394,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_admin-sortable_tree (= 0.3.0)
+  active_admin-sortable_tree (= 1.0.0)
   active_skin
   activeadmin (= 1.0.0.pre4)
   activeadmin_addons
@@ -446,4 +446,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.15.1
+   1.15.4

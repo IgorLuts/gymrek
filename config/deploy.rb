@@ -5,7 +5,7 @@ lock '3.9.0'
 # Project configuration options
 # ------------------------------
 
-set :application,    'jaja'
+set :application,    'gymrek'
 set :login,          'lexx777'
 set :user,           'hosting_lexx777'
 
@@ -16,7 +16,7 @@ set :unicorn_pid,    "/var/run/unicorn/#{fetch(:user)}/" \
 set :bundle_without, %w{development test}.join(' ')             # this is default
 set :use_sudo,       false
 
-set :repo_url,       'git@github.com:IgorLuts/jaja.git'
+set :repo_url,       'git@github.com:IgorLuts/gymrek.git'
 
 # Default branch is :master
 # ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
