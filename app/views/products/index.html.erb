@@ -3,8 +3,8 @@
     <div class="container">
         <div class="row">
           <ul class="breadcrumb">
-            <li><%= link_to "Главная", root_path %></li>
-             <li>Каталог</li>
+            <li><%= link_to "Home", root_path %></li>
+             <li>Catalog</li>
           </ul>
         </div>
     </div>
@@ -19,12 +19,12 @@
 <div class="col-md-9">
   <div class="box">
     <% if params[:q] %>
-      <h1>Результаты поиска</h1>
+      <h1>Search results</h1>
       <% if @products.empty? %>
-        <h3>поиск не дал результатов</h3>
+        <h3>The search has not given any results</h3>
       <% end %>
     <% else %>
-      <h1>Каталог товаров</h1>
+      <h1>Catalog</h1>
     <% end %>
   </div>
 

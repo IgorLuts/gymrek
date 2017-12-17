@@ -1,22 +1,22 @@
 <div class="panel panel-default sidebar-menu">
     <div class="panel-heading">
-        <h3 class="panel-title">Личный кабинет</h3>
+        <h3 class="panel-title"> Personal area</h3>
     </div>
     <div class="panel-body">
         <ul class="nav nav-pills nav-stacked menu_active">
             <li>
                 <%= link_to orders_path do %>
-                    <i class="fa fa-list"></i>Мои заказы</a>
+                    <i class="fa fa-list"></i> Orders</a>
                 <% end %>
             </li>
             <li>
                 <%= link_to edit_user_registration_path do %>
-                    <i class="fa fa-user"></i> Мой аккаунт</a>
+                    <i class="fa fa-user"></i> My account</a>
                 <% end %>
             </li>
             <li>
                 <%= link_to destroy_user_session_path, method: :delete do %>
-                    <i class="fa fa-sign-out"></i> Выход</a>
+                    <i class="fa fa-sign-out"></i> Login out</a>
                 <% end %>
             </li>
         </ul>

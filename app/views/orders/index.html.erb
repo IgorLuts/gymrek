@@ -2,15 +2,15 @@
     <%= render 'users/user_menu' %>
 <% end %>
 <div class="box" >
-<h1>Мои заказы</h1>
+<h1>My orders</h1>
 <div class="table-responsive">
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Номер заказы</th>
-                <th>Дата</th>
-                <th>Всего</th>
-                <th>Статус</th>
+                <th>Order number</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Status</th>
                 <th></th>
             </tr>
         </thead>
@@ -20,9 +20,9 @@
                 <td># <%= order.id %></td>
                 <td><%= order.created_at.strftime("%Y/%m/%d") %></td>
                 <td><%= order.total_price %></td>
-                <td><span class="label label-info">В обработке</span>
+                <td><span class="label label-info">In processing</span>
                 </td>
-                <td><%= link_to "Посмотреть", order, class: "btn btn-primary btn-sm" %>
+                <td><%= link_to "Look", order, class: "btn btn-primary btn-sm" %>
                 </td>
             </tr>
         <% end %>

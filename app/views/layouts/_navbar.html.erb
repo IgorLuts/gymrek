@@ -15,27 +15,27 @@
         <div class="navbar-collapse collapse" id="navigation">
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a href="/">Главная</a>
+                    <a href="/">Home</a>
                 </li>
                 <li>
-                    <%= link_to "Каталог", products_path %>
+                    <%= link_to "Catalog", products_path %>
                 </li>
                 <li>
-                    <%= link_to "Оплата и доставка", page_path("oplata-i-dostavka") %>
+                    <%= link_to "Payment and delivery", page_path("oplata-i-dostavka") %>
                 </li>
                 <!-- <li>
                     <%= link_to "О брендах", attachments_path %>
                 </li> -->
                 <li>
-                    <%= link_to "Контакты", new_contact_path %>
+                    <%= link_to "Contact", new_contact_path %>
                 </li>
                 <li>
-                    <%= link_to "О нас", page_path("o-nas") %>
+                    <%= link_to "About us", page_path("o-nas") %>
                 </li>
             </ul>
             <%= search_form_for Product.ransack(params[:q]), html: {class: "navbar-form navbar-right", role: "search" } do |f| %>
                 <div class="input-group">
-                  <%= f.search_field :title_cont, placeholder: "Поиск", class: "form-control" %>
+                  <%= f.search_field :title_cont, placeholder: "Search", class: "form-control" %>
                   <span class="input-group-btn">
                     <button type="submit" class="btn btn-no-margin"><i class="fa fa-search"></i></button>
                   </span>

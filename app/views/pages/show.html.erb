@@ -7,9 +7,9 @@
     <div class="container">
         <div class="row">
           <ul class="breadcrumb">
-            <li><%= link_to "Главная", root_path %></li>
+            <li><%= link_to "Home", root_path %></li>
              <li><%= @page.title %></li>
-          </ul>          
+          </ul>
         </div>
     </div>
   </div>
@@ -19,6 +19,6 @@
   <div class="heading">
     <h1><%= @page.title %></h1>
   </div>
-  
+
   <%= sanitize @page.content %>
 </div>

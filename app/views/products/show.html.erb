@@ -45,17 +45,17 @@
                 <hr>
                   <%= form_for ShoppingCartItem.new, :url => shopping_cart_items_path(:product_id => @product), :html => { :class => 'form-inline cart_item_form'} do |f| %>
                     <div class="form-group">
-                      <%= f.label :quantity, "Количество: "%>
+                      <%= f.label :quantity, "Quantity: "%>
                       <%= f.number_field :quantity, value: 1, class: 'form-control' %>
                     </div>
-                    <%= f.submit "Купить", class:"btn btn-primary" %>
+                    <%= f.submit "Buy", class:"btn btn-primary" %>
                   <% end %>
             </div>
             <div class="ribbon new presents">
                 <% if @product.available %>
-                  <div class="theribbon">Есть в наличии</div>
+                  <div class="theribbon">in stock</div>
                 <% else %>
-                  <div class="theribbon">Под заказ</div>
+                  <div class="theribbon">under the order</div>
                 <% end %>
                 <div class="ribbon-background"></div>
             </div>
@@ -83,12 +83,12 @@
     <div class="box product_tab" id="details">
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Описание</a></li>
+          <li role="presentation" class="active"><a href="#description" aria-controls="description" role="tab" data-toggle="tab">Description</a></li>
           <% if @product.characteristics && @product.characteristics != "" %>
-            <li role="presentation"><a href="#characteristics" aria-controls="characteristics" role="tab" data-toggle="tab">Характеристики</a></li>
+            <li role="presentation"><a href="#characteristics" aria-controls="characteristics" role="tab" data-toggle="tab">Characteristics</a></li>
           <% end %>
-          <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">Отзывы (<%= @comments_count %>)</a></li>
-          <li role="presentation"><a href="#recent" aria-controls="recent" role="tab" data-toggle="tab">Похожие товары</a></li>
+          <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab">reviews (<%= @comments_count %>)</a></li>
+          <li role="presentation"><a href="#recent" aria-controls="recent" role="tab" data-toggle="tab">Similar products</a></li>
         </ul>
 
         <!-- Tab panes -->
@@ -106,8 +106,6 @@
             <div class="social-likes" data-title="<%= @product.title %>" data-counters="no">
               <div class="facebook" title="Поделиться ссылкой на Фейсбуке">Facebook</div>
               <div class="twitter" title="Поделиться ссылкой в Твиттере">Twitter</div>
-              <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Вконтакте</div>
-              <div class="odnoklassniki" title="Поделиться ссылкой в Одноклассниках">Одноклассники</div>
               <div class="plusone" title="Поделиться ссылкой в Гугл-плюсе">Google+</div>
             </div>
           </div>

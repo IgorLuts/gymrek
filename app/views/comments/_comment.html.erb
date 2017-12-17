@@ -1,5 +1,5 @@
   <div class="btn btn-primary pull-left" id='show_comment_form'>
-    Написать отзыв
+    Write a review
   </div>
   <div class="clearfix"></div>
   <%= form_for([@product, Comment.new], :html => { :role => 'form'}, remote: true) do |f| %>
@@ -15,15 +15,15 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.label "Ваше имя" %><br>
+        <%= f.label "Your name" %><br>
         <%= f.text_field :user_name, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label "Ваш отзыв" %><br>
+        <%= f.label "Your review" %><br>
         <%= f.text_area :body, class: 'form-control' %>
       </div>
         <button class="btn btn-primary pull-right">
-            <i class="fa fa-comment-o"></i> Оставить отзыв
+            <i class="fa fa-comment-o"></i> Give feedback
         </button>
    <% end %>
   <div id="comments">
@@ -35,14 +35,14 @@
                   <p><%= raw comment.body %></p>
 
                 <% comment.comment_replies.each do |reply| %>
-                  <div class="comment-replies">                 
+                  <div class="comment-replies">
                     <h5><%= reply.user_name %></h5>
                     <p class="posted"><i class="fa fa-clock-o"></i> <%= time_tag reply.created_at.to_date %></p>
                     <p><%= raw reply.body %></p>
-                  </div> 
-                <% end %> 
+                  </div>
+                <% end %>
               </div>
 
-          <% end %>  
+          <% end %>
       </div>
   </div>

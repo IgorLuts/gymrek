@@ -3,12 +3,12 @@
     <div class="container">
         <div class="row">
           <div class="col-md-7">
-            <h1>Блог</h1>
+            <h1>Blog</h1>
           </div>
           <div class="col-md-5">
             <ul class="breadcrumb">
-              <li><%= link_to "Главная", root_path %></li>
-               <li>Новости и статьи</li>
+              <li><%= link_to "Home", root_path %></li>
+               <li>News and Articles</li>
             </ul>
           </div>
         </div>
@@ -29,7 +29,7 @@
               <%= sanitize article.description %>
             </p>
             <p class="read-more">
-                <%= link_to "Подробнее", article_path(article), class: "btn btn-primary" %>
+                <%= link_to "Learn More", article_path(article), class: "btn btn-primary" %>
             </p>
           </div>
         </div>

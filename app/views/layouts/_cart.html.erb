@@ -3,6 +3,6 @@
   <% if @shopping_cart && @shopping_cart.has_items? %>
     <span class="hidden-sm"><%=number_to_currency(@shopping_cart.total) %></span>
   <% else %>
-    <span class="hidden-sm">Корзина пуста</span>
+    <span class="hidden-sm">Your cart is enpty</span>
   <% end %>
 <% end %>
