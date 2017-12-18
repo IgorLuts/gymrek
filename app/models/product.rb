@@ -19,6 +19,9 @@ class Product < ActiveRecord::Base
   scope :similar, ->(product) {
     joins(:tags).where('tags.name = ?', product.tags.first.name.to_s) if product.tags.present?
   }
+  scope :novinki, -> { includes(:tags).where(tags: {name: 'novinki'}).references(:tags) }
+  scope :popular, -> { includes(:tags).where(tags: {name: 'popular'}).references(:tags) }
+  
   validates :categories, :tags, :title, :description, :image, :price, presence: true
 
   friendly_id :title, use: :slugged
