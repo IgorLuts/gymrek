@@ -59,7 +59,7 @@
                             <%= f.text_field :name, :autofocus => true, placeholder: 'Name', class: 'form-control', required: true%>
                         </div>
                         <div class="form-group">
-                            <%= f.text_field :phone, placeholder: 'phone number', class: 'form-control', pattern: "[0-9]+" %>
+                            <%= f.text_field :phone, placeholder: 'phone number', class: 'form-control', pattern: "[+0-9]+" %>
                         </div>
                         <%= f.submit 'Request a call back', :class => 'btn btn-primary' %>
                     <% end %>
