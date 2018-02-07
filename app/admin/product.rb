@@ -60,7 +60,7 @@ ActiveAdmin.register Product do
     column('price', humanize_name: false)
     column('currencyId', humanize_name: false) { 'UAH' }
     column('category', humanize_name: false)   { 'Детская брендовая обувь' }
-    column('picture', humanize_name: false)    { |product| 'http://jaja.com.ua' + product.image.url }
+    column('picture', humanize_name: false)    { |product| 'http://gymrek.com' + product.image.url }
     column('name', humanize_name: false, &:title)
     column('vendor', humanize_name: false) { |product| product.brand.name }
     column('delivery', humanize_name: false) { 'true' }
