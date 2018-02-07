@@ -33,7 +33,7 @@ Rails.application.configure do
     domain: "jaja.com.ua",
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: "admin@jaja.com.ua",
+    user_name: "orders@gymrek.com",
     password: Rails.application.secrets.mail_password
   }
   # ActionMailer Config
