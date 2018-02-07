@@ -122,10 +122,10 @@ ru:
     format: "%{attribute} %{message}"
     messages:
       accepted: нужно подтвердить
-      blank: can not be empty
+      blank: не может быть пустым
       present: нужно оставить пустым
       confirmation: не совпадает со значением поля %{attribute}
-      empty: can not be empty
+      empty: не может быть пустым
       equal_to: может иметь лишь значение, равное %{count}
       even: может иметь лишь нечетное значение
       exclusion: имеет зарезервированное значение
