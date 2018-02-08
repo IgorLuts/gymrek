@@ -37,7 +37,7 @@
                     </span>
                   </p>
                 <% else %>
-                  <p class="price"><%= number_to_currency @product.price %></p>
+                  <p class="price"><%= @product.price %> EUR</p>
                 <% end %>
                     <meta itemprop="price" content="<%= @product.price %>">
                     <meta itemprop="priceCurrency" content="UAH">
