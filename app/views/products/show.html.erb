@@ -30,10 +30,10 @@
                 <% if @product.old_price %>
                   <p class="price">
                     <span class="sale">
-                      <%= number_to_currency @product.old_price %>
+                      <%= @product.old_price %> EUR
                     </span>
                     <span>
-                      <%= number_to_currency @product.price %>
+                      <%= @product.price %> EUR
                     </span>
                   </p>
                 <% else %>
