@@ -33,6 +33,7 @@ gem 'cancancan'
 gem 'sitemap_generator'
 gem 'activeadmin_addons'
 gem 'slim'
+gem 'stripe'
 
 group :development, :test do
   gem 'byebug'
@@ -58,4 +59,6 @@ group :development do
   gem "capistrano-rvm"
   gem "capistrano-bundler"
   gem "capistrano-rails"
+  gem "letter_opener"
+  gem 'pry-rails'
 end

@@ -10,6 +10,7 @@ ActiveAdmin.register Order do
     column('Customer email', &:email)
     column('Customer phone', &:phone)
     column('Delivery address', &:adress)
+    column('Payment', &:payment_id)
     column('Total') { |order| number_to_currency order.total_price }
     actions
   end

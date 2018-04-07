@@ -17,15 +17,14 @@ class OrdersController < ApplicationController
       redirect_to root_path, notice: "Ваша корзина пустая"
       return
     end
-
     @order = Order.new
+    @order.add_total_price(@shopping_cart)
   end
 
   def create
     return if @shopping_cart.empty?
-    @order = Order.new(order_params.merge(user: current_user))
-    @order.add_line_items_from_cart(@shopping_cart)
-    @order.add_total_price(@shopping_cart)
+    @order = build_order
+    charge(@order)
 
     respond_to do |format|
       if @order.save
@@ -49,5 +48,31 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(:firstname, :lastname, :post_code, :adress, :email, :phone, :comment)
+  end
+
+  def build_order
+    @order = Order.new(order_params.merge(user: current_user))
+    @order.add_line_items_from_cart(@shopping_cart)
+    @order.add_total_price(@shopping_cart)
+    @order
+  end
+
+  def charge(order)
+    token = params[:stripeToken]
+
+    return unless token
+
+    charge = Stripe::Charge.create({
+      amount: Integer(order.total_price * 100),
+      currency: 'eur',
+      description: 'Gymrec order',
+      source: token
+    })
+
+    if charge[:failure_code]
+      order.errors.add(:base, charge[:failure_message])
+    else
+      order.payment_id = charge[:id]
+    end
   end
 end
