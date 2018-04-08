@@ -9,8 +9,8 @@
 <% @order.shopping_cart_items.each do |item| %>
   <p>Item name: <%= item.item.title %></p>
   <p>Item quantity: <%= item.quantity  %></p>
-  <p>Item price: <%= number_to_currency item.item.price %></p>
+  <p>Item price: EUR <%= item.item.price %></p>
   <hr>
 <% end %>
 
-<p>Order total: <%= number_to_currency @order.total_price  %></p>
+<p>Order total: EUR <%= @order.total_price  %></p>

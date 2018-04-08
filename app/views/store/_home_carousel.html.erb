@@ -19,7 +19,7 @@ _________________________________________________________ -->
                   <h3>
                     <%= product.title %>
                   </h3>
-                  <p class="price"><%= number_to_currency product.price %></p>
+                  <p class="price">EUR <%= product.price %></p>
                   <p><%= truncate(product.description, length: 200, separator: ' ', :escape => false) %></p>
                   <p class="buttons">
                     <%= link_to "Подробно", product_path(product), class:"btn btn-default" %>

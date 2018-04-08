@@ -1,7 +1,7 @@
 <%= link_to shopping_cart_path, class: "btn btn-primary" do %>
   <i class="fa fa-shopping-cart"></i>
   <% if @shopping_cart && @shopping_cart.has_items? %>
-    <span class="hidden-sm"><%=number_to_currency(@shopping_cart.total) %></span>
+    <span class="hidden-sm">EUR <%= (@shopping_cart.total) %></span>
   <% else %>
     <span class="hidden-sm">Your cart is empty</span>
   <% end %>
