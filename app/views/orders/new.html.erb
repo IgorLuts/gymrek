@@ -45,7 +45,7 @@
         <div class="form-group">
           <%= f.submit 'Confirm order', :class => 'btn btn-primary pull-right'%>
 
-          <script
+          <!-- <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key=<%= ENV.fetch('STRIPE_PUBLIC_KEY') %>
             data-amount=<%= @order.total_price * 100 %>
@@ -55,7 +55,7 @@
             data-zip-code="true"
             data-allow-remember-me="false"
             data-currency="eur">
-          </script>
+          </script> -->
 
           <%= link_to root_path, class: "btn btn-default pull-left" do %>
               <i class="fa fa-chevron-left"></i> Continue shopping
