@@ -1,11 +1,13 @@
 class ApplicationController < ActionController::Base
-  # Prevent CSRF attacks by raising an exception.
-  # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
   before_action :find_categories, :set_cart, if: :devise_controller?
-  # before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_locale
 
   helper_method :category_path
+
+  rescue_from CanCan::AccessDenied do |exception|
+    redirect_to root_url, alert: exception.message
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.for(:account_update) do |u|
@@ -14,9 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def find_categories
-    @categories = Rails.cache.fetch('global/categories', expires_in: 10.minutes) do
-      Category.where(active: true).arrange
-    end
+    @categories = Category.where(active: true).arrange
   end
 
   def set_cart
@@ -25,15 +25,15 @@ class ApplicationController < ActionController::Base
     session[:shopping_cart_id] = @shopping_cart.id
   end
 
-  rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url, alert: exception.message
-  end
-
   def category_path(category)
     if category.is_root?
       category_short_path category
     else
       category_long_path category.parent, category
     end
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
   end
 end

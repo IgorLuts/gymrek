@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require bootstrap-sprockets
 //= require ckeditor/init
-//= require owl.carousel
 //= require_tree .
 
 $(document).ready(function(){
@@ -40,23 +39,5 @@ $(document).ready(function(){
     $('#show_comment_form').on('click', function(){
         $('.new_comment').show("slow");
         $('#show_comment_form').hide();
-    });
-
-    $('.homepage').owlCarousel({
-        navigation: false, // Show next and prev buttons
-        navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"],
-        slideSpeed: 2000,
-        paginationSpeed: 1000,
-        autoPlay: true,
-        stopOnHover: true,
-        singleItem: true,
-        lazyLoad: false,
-        addClassActive: true,
-        afterInit: function () {
-        //animationsSlider();
-        },
-        afterMove: function () {
-        //animationsSlider();
-        }
     });
 });

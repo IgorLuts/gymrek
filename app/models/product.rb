@@ -1,6 +1,16 @@
 class Product < ActiveRecord::Base
   extend FriendlyId
 
+  translates :title, :description, :characteristics
+
+  active_admin_translates :title, :description, :characteristics
+
+  mount_uploader :image, ImageUploader
+
+  friendly_id :title, use: :slugged
+
+  paginates_per 15
+
   belongs_to :brand
 
   has_many :product_tags, dependent: :destroy
@@ -13,7 +23,7 @@ class Product < ActiveRecord::Base
   accepts_nested_attributes_for :attachments, allow_destroy: true
   accepts_nested_attributes_for :galleries, allow_destroy: true
 
-  mount_uploader :image, ImageUploader
+  validates :categories, :tags, :title, :description, :image, :price, presence: true
 
   scope :all_except, ->(product) { where.not(id: product.id) }
   scope :similar, ->(product) {
@@ -21,12 +31,6 @@ class Product < ActiveRecord::Base
   }
   scope :novinki, -> { includes(:tags).where(tags: {name: 'novinki'}).references(:tags) }
   scope :popular, -> { includes(:tags).where(tags: {name: 'popular'}).references(:tags) }
-  
-  validates :categories, :tags, :title, :description, :image, :price, presence: true
-
-  friendly_id :title, use: :slugged
-
-  paginates_per 15
 
   def normalize_friendly_id(text)
     text.to_slug.normalize(transliterations: :russian).to_s

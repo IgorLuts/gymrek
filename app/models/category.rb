@@ -7,6 +7,10 @@ class Category < ActiveRecord::Base
 
   friendly_id :name, use: :slugged
 
+  translates :name, :description
+
+  active_admin_translates :name, :description
+
   def normalize_friendly_id(text)
     text.to_slug.normalize(transliterations: :russian).to_s
   end

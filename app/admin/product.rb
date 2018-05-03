@@ -4,7 +4,8 @@ ActiveAdmin.register Product do
                 :characteristics, :brand_id, :old_price, :video_url,
                 tag_ids: [], category_ids: [],
                 attachments_attributes: [:id, :file, :_destroy],
-                galleries_attributes: [:id, :image, :_destroy]
+                galleries_attributes: [:id, :image, :_destroy],
+                translations_attributes: [:id, :locale, :title, :description, :characteristics, :_destroy]
 
   index do
     selectable_column
@@ -17,15 +18,12 @@ ActiveAdmin.register Product do
     actions
   end
 
-  filter :title, label: 'Поиск'
+  filter :title, label: 'Search'
   filter :price
 
   form html: { multipart: true } do |f|
     f.inputs 'Product Details' do
-      f.input :title
       f.input :slug if f.object.persisted?
-      f.input :description, as: :ckeditor
-      f.input :characteristics, as: :ckeditor
       f.input :image, as: :file
       f.input :video_url
       f.input :old_price
@@ -39,32 +37,27 @@ ActiveAdmin.register Product do
       f.input :meta_title
       f.input :meta_description
       f.input :meta_keywords
+
       f.inputs 'Attachment' do
         f.has_many :attachments, heading: false, allow_destroy: true do |a|
           a.input :file, as: :file, hint: a.object.try(:file_url)
         end
       end
+
       f.inputs 'Gallery' do
         f.has_many :galleries, heading: false, allow_destroy: true do |a|
           a.input :image, as: :file, hint: a.object.try(:image_url)
         end
       end
     end
-    f.actions
-  end
 
-  csv do
-    column('id', humanize_name: false)
-    column('available', humanize_name: false)
-    column('url', humanize_name: false) { |product| product_url(product) }
-    column('price', humanize_name: false)
-    column('currencyId', humanize_name: false) { 'UAH' }
-    column('category', humanize_name: false)   { 'Детская брендовая обувь' }
-    column('picture', humanize_name: false)    { |product| 'http://gymrek.com' + product.image.url }
-    column('name', humanize_name: false, &:title)
-    column('vendor', humanize_name: false) { |product| product.brand.name }
-    column('delivery', humanize_name: false) { 'true' }
-    column('local_delivery_cost', humanize_name: false, &:delivery_cost)
-    column('local_delivery_days', humanize_name: false) { '1-2' }
+    f.inputs "Translated fields" do
+      f.translated_inputs 'ignored title', switch_locale: false do |t|
+        t.input :title
+        t.input :characteristics, as: :ckeditor
+        t.input :description, as: :ckeditor
+      end
+    end
+    f.actions
   end
 end

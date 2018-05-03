@@ -11,8 +11,9 @@
 @import "activeadmin_addons/all";
 @import "active_admin/mixins";
 @import "active_admin/base";
+@import "active_admin/active_admin_globalize";
 
-@import "active_skin";
+// @import "active_skin";
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
