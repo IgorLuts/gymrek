@@ -34,19 +34,18 @@ class ApplicationController < ActionController::Base
   end
 
   def set_locale
-    if cookies[:educator_locale] && I18n.available_locales.include?(cookies[:educator_locale].to_sym)
-      l = cookies[:educator_locale].to_sym
+    if cookies[:locale] && I18n.available_locales.include?(cookies[:locale].to_sym)
+      l = cookies[:locale].to_sym
     else
       begin
-        country_code = request.location.country_code
-        if country_code
-          code = country_code.downcase.to_sym
-          l = ['be','bel'].includes?(country_code) ? :nl : I18n.default_locale
+        if country_code = request.location.country_code
+          logger.info "setting locale #{country_code}"
+          l = [:be, :bel].include?(country_code.downcase.to_sym) ? :nl : I18n.default_locale
         end
       rescue
         l = I18n.default_locale
       ensure
-        cookies.permanent[:educator_locale] = l
+        cookies.permanent[:locale] = l
       end
     end
     I18n.locale = l
