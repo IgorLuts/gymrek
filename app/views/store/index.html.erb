@@ -4,7 +4,7 @@
 </div>
 <div class="col-md-9">
   <div class="box">
-      <h1>Popular goods</h1>
+      <h1><%= t('popular_products') %></h1>
   </div>
 
   <div class="row products">
@@ -12,7 +12,7 @@
   </div>
   <% if @novinki.any? %>
     <div class="box">
-        <h2>New</h2>
+        <h2><%= t('new') %></h2>
     </div>
     <div class="row products">
         <%= render "products/product", products: @novinki %>

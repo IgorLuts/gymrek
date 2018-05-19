@@ -194,6 +194,7 @@ GEM
     formtastic_i18n (0.6.0)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
+    geocoder (1.4.7)
     gibbon (3.0.2)
       faraday (>= 0.9.1)
       multi_json (>= 1.11.0)
@@ -453,6 +454,7 @@ DEPENDENCIES
   fog-aws
   font-awesome-rails
   friendly_id (~> 5.1.0)
+  geocoder
   gibbon
   globalize (~> 5.0.0)
   jbuilder (~> 2.0)

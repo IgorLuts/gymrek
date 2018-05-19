@@ -24,3 +24,104 @@ en:
     globalize:
       language:
         nl: Nederlands
+
+  home: Home
+  write_a_review: Write a review
+  your_name: Your name
+  your_review: Youre review
+  give_feedback: Give feedback
+  contact: Contact
+  phone_number: Phone number
+  you_can_consult_with_managers_or_order_goods_by_number: You can consult with managers or order goods by number
+  write_to_us: Write to us
+  contact_form_name: "Name:"
+  contact_form_email: "Email:"
+  contact_form_your_question: "Your question:"
+  contact_form_send: Send
+  welcome: Welcome
+  you_can_confirm_your_account_email_through_the_link_below: "You can confirm your account email through the link below:"
+  confirm_my_account: Confirm my account
+  Hello: Hello
+  someone_has_requested_a_link_to_change_your_password_you_can_do_this_through_the_link_below: Someone has requested a link to change your password. You can do this through the link below.
+  change_my_password: Change my password
+  if_you_didn't_request_this_please_ignore_this_email: If you didn't request this, please ignore this email
+  your_password_won't_change_until_you_access_the_link_above_and_create_a_new_one: Your password won't change until you access the link above and create a new one
+  your_account_has_been_locked_due_to_an_excessive_number_of_unsuccessful_sign_in_attempts: Your account has been locked due to an excessive number of unsuccessful sign in attempts
+  click_the_link_below_to_unlock_your_account: Click the link below to unlock your account
+  unlock_my_account: Unlock my account
+  change_your_password: Change your password
+  new_password: New password
+  confirm_new_password: Confirm new password
+  change_my_password: Change my password
+  forgot_your_password: Forgot your password
+  we'll_send_password_reset_instructions: We'll send password reset instructions
+  reset_password: Reset password
+  my_account: My account
+  email: email
+  сurrent_password: Current password
+  new_password: New password
+  new_password_again: New password again
+  change_password: Change password
+  registration: Registration
+  password: Password
+  the_password_again: The password again
+  sign_up: Sign Up
+  login_to_the_online_store: Login to the online store
+  login: Login
+  SORRY: SORRY
+  we_couldn't_find_that_page: we couldn't find that page
+  try_searching_or_go_to_home_page: try searching or go to home page
+  your_cart_is_empty: Your cart is empty
+  information: Information
+  about_us: About us
+  payment_and_delivery: Payment and delivery
+  blog: Blog
+  support: Support
+  contact_us: Contact us
+  goods_return: Goods Return
+  we_are_in_social_networks: We are in social networks
+  catalog: Catalog
+  contact: Contact
+  search: Search
+  categories: Categories
+  request_a_call_back: Request a call back
+  login_out: Login out
+  call_back: Call back
+  name: Name
+  request_a_call_back: Request a call back
+  my_orders: My orders
+  order_number: Order number
+  date: Date
+  total: Total
+  status: Status
+  in_processing: In processing
+  look: Look
+  checkout: Checkout
+  first_name: First name
+  last_name: Last name
+  delivery_adress: Delivery adress
+  post_code: Post code
+  comment: Comment
+  confirm_order: Confirm order
+  continue_shopping: Continue shopping
+  order: Order
+  product: Product
+  quantity: Quantity
+  price: Price
+  total: Total
+  search_results: Search results
+  the_search_has_not_given_any_results: The search has not given any results
+  quantity1: "Quantity: "
+  buy: Buy
+  in_stock: in stock
+  out_of_stock: out of stock
+  description: Description
+  characteristics: Characteristics
+  reviews: Reviews
+  similar_products: Similar products
+  clear_cart: Clear cart
+  confirm_order: Confirm order
+  popular_products: Popular products
+  new: New
+  personal_area: Personal area
+  orders: Orders

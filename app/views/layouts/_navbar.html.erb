@@ -15,27 +15,27 @@
         <div class="navbar-collapse collapse" id="navigation">
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a href="/">Home</a>
+                    <a href="/"><%= t('home') %></a>
                 </li>
                 <li>
-                    <%= link_to "Catalog", products_path %>
+                    <%= link_to t("catalog"), products_path %>
                 </li>
                 <li>
-                    <%= link_to "Payment and delivery", page_path("oplata-i-dostavka") %>
+                    <%= link_to t("payment_and_delivery"), page_path("oplata-i-dostavka") %>
                 </li>
                 <!-- <li>
                     <%= link_to "О брендах", attachments_path %>
                 </li> -->
                 <li>
-                    <%= link_to "Contact", new_contact_path %>
+                    <%= link_to t("contact"), new_contact_path %>
                 </li>
                 <li>
-                    <%= link_to "About us", page_path("o-nas") %>
+                    <%= link_to t("about_us"), page_path("o-nas") %>
                 </li>
             </ul>
-            <%= search_form_for Product.ransack(params[:q]), html: {class: "navbar-form navbar-right", role: "search" } do |f| %>
+            <%= search_form_for Product.ransack(params[:q]), html: {class: "navbar-form navbar-right", role: t("search") } do |f| %>
                 <div class="input-group">
-                  <%= f.search_field :title_cont, placeholder: "Search", class: "form-control" %>
+                  <%= f.search_field :title_cont, placeholder: t("search"), class: "form-control" %>
                   <span class="input-group-btn">
                     <button type="submit" class="btn btn-no-margin"><i class="fa fa-search"></i></button>
                   </span>

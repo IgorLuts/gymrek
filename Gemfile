@@ -36,6 +36,7 @@ gem 'stripe'
 gem 'rails-i18n', '~> 4.0'
 gem 'globalize', '~> 5.0.0'
 gem 'activeadmin-globalize', '~> 1.0.0.pre'
+gem 'geocoder'
 
 group :development, :test do
   gem 'byebug'

@@ -3,6 +3,6 @@
   <% if @shopping_cart && @shopping_cart.has_items? %>
     <span class="hidden-sm">EUR <%= (@shopping_cart.total) %></span>
   <% else %>
-    <span class="hidden-sm">Your cart is empty</span>
+    <span class="hidden-sm"><%= t('your_cart_is_empty') %></span>
   <% end %>
 <% end %>

@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row">
         <ul class="breadcrumb">
-          <li><%= link_to "Home", root_path %></li>
+          <li><%= link_to t('home'), root_path %></li>
           <% @category.ancestors.each do |a| %>
             <li><%= link_to a.name, a %></li>
           <% end %>

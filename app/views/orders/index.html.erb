@@ -2,15 +2,15 @@
     <%= render 'users/user_menu' %>
 <% end %>
 <div class="box" >
-<h1>My orders</h1>
+<h1><%= t("my_orders") %></h1>
 <div class="table-responsive">
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Order number</th>
-                <th>Date</th>
-                <th>Total</th>
-                <th>Status</th>
+                <th><%= t("order_number") %></th>
+                <th><%= t("date") %></th>
+                <th><%= t("total") %></th>
+                <th><%= t("status") %></th>
                 <th></th>
             </tr>
         </thead>
@@ -20,9 +20,9 @@
                 <td># <%= order.id %></td>
                 <td><%= order.created_at.strftime("%Y/%m/%d") %></td>
                 <td><%= order.total_price %></td>
-                <td><span class="label label-info">In processing</span>
+                <td><span class="label label-info"><%= t("in_processing") %></span>
                 </td>
-                <td><%= link_to "Look", order, class: "btn btn-primary btn-sm" %>
+                <td><%= link_to t("look"), order, class: "btn btn-primary btn-sm" %>
                 </td>
             </tr>
         <% end %>

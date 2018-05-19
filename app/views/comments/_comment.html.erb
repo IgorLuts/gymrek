@@ -1,5 +1,5 @@
   <div class="btn btn-primary pull-left" id='show_comment_form'>
-    Write a review
+    <%= t('write_a_review') %>
   </div>
   <div class="clearfix"></div>
   <%= form_for([@product, Comment.new], :html => { :role => 'form'}, remote: true) do |f| %>
@@ -15,15 +15,15 @@
       <% end %>
 
       <div class="form-group">
-        <%= f.label "Your name" %><br>
+        <%= f.label t("your_name") %><br>
         <%= f.text_field :user_name, class: 'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label "Your review" %><br>
+        <%= f.label t("your_review") %><br>
         <%= f.text_area :body, class: 'form-control' %>
       </div>
         <button class="btn btn-primary pull-right">
-            <i class="fa fa-comment-o"></i> Give feedback
+            <i class="fa fa-comment-o"></i> <%= t("give_feedback") %>
         </button>
    <% end %>
   <div id="comments">

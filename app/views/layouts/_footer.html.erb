@@ -2,41 +2,41 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-6">
-                <h4>Information</h4>
+                <h4><%= t("information") %></h4>
                 <ul>
                     <li>
-                        <%= link_to "About us", page_path("o-nas") %>
+                        <%= link_to t("about_us"), page_path("o-nas") %>
                     </li>
                     <li>
-                        <%= link_to "Payment and delivery", page_path("oplata-i-dostavka") %>
+                        <%= link_to t("payment_and_delivery"), page_path("oplata-i-dostavka") %>
                     </li>
                     <li>
-                        <%= link_to "Blog", articles_path %>
+                        <%= link_to t("blog"), articles_path %>
                     </li>
                 </ul>
             </div>
             <!-- /.col-md-3 -->
             <div class="col-md-3 col-sm-6">
-                <h4>Support</h4>
+                <h4><%= t("support") %></h4>
                 <ul>
                     <li>
-                        <%= link_to "Contact us", new_contact_path %>
+                        <%= link_to t("contact_us"), new_contact_path %>
                     </li>
                     <li>
-                        <%= link_to "Goods Return", page_path("oplata-i-dostavka") %>
+                        <%= link_to t("goods_return"), page_path("oplata-i-dostavka") %>
                     </li>
                 </ul>
             </div>
             <!-- /.col-md-3 -->
             <div class="col-md-3 col-sm-6">
-                <h4>Phone number</h4>
+                <h4><%= t("phone_number") %></h4>
                 <ul>
                     <li><a href="#"> +32 492 34 37 51</a></li>
                 </ul>
             </div>
             <!-- /.col-md-3 -->
             <div class="col-md-3 col-sm-6">
-                <h4>We are in social networks</h4>
+                <h4><%= t("we_are_in_social_networks") %></h4>
                 <div class="social">
                     <a href="#" class="facebook external" data-animate-hover="shake"><i class="fa fa-facebook"></i></a>
                     <a href="#" class="twitter external" data-animate-hover="shake" ><i class="fa fa-twitter"></i></a>

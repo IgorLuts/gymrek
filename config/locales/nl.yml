@@ -1,2 +1,102 @@
 nl:
-  hello: "Hallo Wereld"
+  hello: "Hallo"
+  home: Homepagina
+  write_a_review: Schrijf een review
+  your_name: Uw naam
+  your_review: Beoordeling
+  give_feedback:
+  contact: Contact
+  phone_number: Telefoonnummer
+  you_can_consult_with_managers_or_order_goods_by_number: Hotline
+  write_to_us: Contacteer ons
+  contact_form_name: "Naam:"
+  contact_form_email: "E-mail:"
+  contact_form_your_question: "Een vraag stelen "
+  contact_form_send: verstuur
+  welcome: Welkom
+  you_can_confirm_your_account_email_through_the_link_below: u kan bevestigen uw account e-mail via de onderstaande link
+  confirm_my_account: bevestig mijn account
+  Hello: Hallo
+  someone_has_requested_a_link_to_change_your_password_you_can_do_this_through_the_link_below:
+  change_my_password: wachtword wijzigen
+  if_you_didn't_request_this_please_ignore_this_email:
+  your_password_won't_change_until_you_access_the_link_above_and_create_a_new_one:
+  your_account_has_been_locked_due_to_an_excessive_number_of_unsuccessful_sign_in_attempts:
+  click_the_link_below_to_unlock_your_account:
+  unlock_my_account: ontgrendelen mijn account
+  change_your_password: wachtwoord wijzigen
+  new_password: Niuw wachtwoord
+  confirm_new_password: wachtwoord bevestigen
+  change_my_password: wachtwoord wijzigen
+  forgot_your_password: wachtwoord vergeten
+  we'll_send_password_reset_instructions: We'll send password reset instructions
+  reset_password: wachtwoord opnieuw in te stellen
+  my_account: mijn account
+  email: e-mail
+  сurrent_password: bestaande wachtwoord
+  new_password: Nieuwe wachtword
+  new_password_again: opnieuw proberen
+  change_password: wachtwoord wijzigen
+  registration: regestreeren
+  password: wachtword
+  the_password_again: wachtwoord opnieuw
+  sign_up: aanmelden
+  login_to_the_online_store: Login to the online store
+  login: inloggen
+  SORRY: SORRY
+  we_couldn't_find_that_page: pagina niet gevonden
+  try_searching_or_go_to_home_page: probeer opniuew of ga naar de startpagina
+  your_cart_is_empty: winkelwagen is leeg
+  information: Informatie
+  about_us: Over ons
+  payment_and_delivery: betaalmogelijkheden en levering
+  blog: blogt
+  support:
+  contact_us: Contacteer ons
+  goods_return: retour en ruilen
+  we_are_in_social_networks:
+  catalog: goederen
+  contact: Contact
+  search: zoek
+  categories: categorieën
+  request_a_call_back: bel terug
+  login_out: uitloggen
+  call_back: bel terug
+  name: Voornaam
+  request_a_call_back: bel terug
+  my_orders: mijn bestellingen
+  order_number: bestellingnummer
+  date: Datum
+  total: Totaal
+  status: Status
+  in_processing: In verwerking
+  look: kijken
+  checkout: uitloggen
+  first_name: voornaam
+  last_name: naam
+  delivery_adress: bezorgadres
+  post_code: Postcode
+  comment: commentaar
+  confirm_order: bevestigen
+  continue_shopping: doorgaan
+  order: bestelling
+  product: artikel
+  quantity: aantal stuks
+  price: prijs
+  total: Totaal
+  search_results: zoekresultaten
+  the_search_has_not_given_any_results: de zoekopdracht heeft geen resultaten opgeleverd
+  quantity1: aantal stuks
+  buy: kopen
+  in_stock: op voorraad
+  out_of_stock: niet op voorraad
+  description: omschrijving
+  characteristics: kenmerken
+  reviews: beoordelingen
+  similar_products: vergelijkbare producten
+  clear_cart: winkelwagen wijzigen
+  confirm_order: bevestig bestelling
+  popular_products: populaire producten
+  new: Nieuwe
+  personal_area: persoonlijk account
+  orders: bestellingen

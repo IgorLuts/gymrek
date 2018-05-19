@@ -3,8 +3,8 @@
     <div class="container">
         <div class="row">
           <ul class="breadcrumb">
-            <li><%= link_to "Home", root_path %></li>
-             <li>Catalog</li>
+            <li><%= link_to t('home'), root_path %></li>
+             <li><%= t('catalog') %></li>
           </ul>
         </div>
     </div>
@@ -19,12 +19,12 @@
 <div class="col-md-9">
   <div class="box">
     <% if params[:q] %>
-      <h1>Search results</h1>
+      <h1><%= t('search_results') %></h1>
       <% if @products.empty? %>
-        <h3>The search has not given any results</h3>
+        <h3><%= t('the_search_has_not_given_any_results') %></h3>
       <% end %>
     <% else %>
-      <h1>Catalog</h1>
+      <h1><%= t('catalog') %></h1>
     <% end %>
   </div>
 
