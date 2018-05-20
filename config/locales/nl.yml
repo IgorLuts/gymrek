@@ -4,7 +4,7 @@ nl:
   write_a_review: Schrijf een review
   your_name: Uw naam
   your_review: Beoordeling
-  give_feedback:
+  give_feedback: geef feedback
   contact: Contact
   phone_number: Telefoonnummer
   you_can_consult_with_managers_or_order_goods_by_number: Hotline
@@ -17,12 +17,12 @@ nl:
   you_can_confirm_your_account_email_through_the_link_below: u kan bevestigen uw account e-mail via de onderstaande link
   confirm_my_account: bevestig mijn account
   Hello: Hallo
-  someone_has_requested_a_link_to_change_your_password_you_can_do_this_through_the_link_below:
+  someone_has_requested_a_link_to_change_your_password_you_can_do_this_through_the_link_below: iemand heeft om een link gevraagd om uw wachtwoord te wijzigen. U kunt dit doen via de link hieronder
   change_my_password: wachtword wijzigen
-  if_you_didn't_request_this_please_ignore_this_email:
-  your_password_won't_change_until_you_access_the_link_above_and_create_a_new_one:
-  your_account_has_been_locked_due_to_an_excessive_number_of_unsuccessful_sign_in_attempts:
-  click_the_link_below_to_unlock_your_account:
+  if_you_didn't_request_this_please_ignore_this_email: als je dit niet hebt aangevraagd, negeer dan deze e-mail
+  your_password_won't_change_until_you_access_the_link_above_and_create_a_new_one: uw wachtwoord verandert niet totdat u de bovenstaande link opent en een nieuwe maakt
+  your_account_has_been_locked_due_to_an_excessive_number_of_unsuccessful_sign_in_attempts: uw account is vergrendeld vanwege een buitensporig aantal mislukte aanmeldingspogingen
+  click_the_link_below_to_unlock_your_account: klik op de onderstaande link om uw account te ontgrendelen
   unlock_my_account: ontgrendelen mijn account
   change_your_password: wachtwoord wijzigen
   new_password: Niuw wachtwoord
@@ -54,7 +54,7 @@ nl:
   support:
   contact_us: Contacteer ons
   goods_return: retour en ruilen
-  we_are_in_social_networks:
+  we_are_in_social_networks: wij zijn in sociale netwerk
   catalog: goederen
   contact: Contact
   search: zoek
@@ -96,7 +96,7 @@ nl:
   similar_products: vergelijkbare producten
   clear_cart: winkelwagen wijzigen
   confirm_order: bevestig bestelling
-  popular_products: populaire producten
+  popular_products: Populaire producten
   new: Nieuwe
   personal_area: persoonlijk account
   orders: bestellingen
