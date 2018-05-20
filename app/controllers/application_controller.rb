@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
     else
       begin
         if country_code = request.location.country_code
-          logger.info "setting locale #{country_code}"
+          logger.debug "setting locale #{country_code}"
           l = [:be, :bel].include?(country_code.downcase.to_sym) ? :nl : I18n.default_locale
         end
       rescue
